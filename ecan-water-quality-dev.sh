@@ -1,5 +1,5 @@
 #!/bin/bash
-docker pull dtok/water-data-allocation:dev
-docker rm wdc_dev
-docker run --name wdc_dev -v /home/mike/git/WaterDataConsents/parameters-dev.yml:/parameters.yml dtok/water-data-allocation:dev
+docker pull tethysts/tethys-extraction-ecan-water-quality:dev
+docker rm wq_dev
+docker run --name wq_dev -v /home/mike/git/tethys/tethys-extraction-ecan-water-quality/parameters-b2.yml:/parameters.yml tethysts/tethys-extraction-ecan-water-quality:dev
 echo "Success!"
