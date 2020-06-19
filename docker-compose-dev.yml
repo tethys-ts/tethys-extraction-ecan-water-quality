@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+    tasker_dev:
+        image: strm/tasker
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+        environment:
+             configuration: |
+                 schedule:
+                     - cron: 0 10 * * * *
+                       task: consent-process-dev
+                 tasks:
+                     docker:
+                         - name: consent-process-dev
+                           image: dtok/water-data-allocation:dev
+                           always-pull: true
+                           volumes:
+                               - /home/mike/git/WaterDataConsents/parameters-dev.yml:/parameters.yml
+                           script:
+                               - python main.py parameters.yml
