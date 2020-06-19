@@ -16,7 +16,7 @@ dist/
 .cache
 
 # Docker parameters
-# param*.yml
+param*.yml
 *.log
 /.project
 /.pydevproject
