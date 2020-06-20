@@ -27,17 +27,17 @@ logging.basicConfig(filename='water-quality.log', format='%(asctime)s: %(levelna
 ### Read in parameters
 print('---Read in parameters')
 
-#base_dir = os.path.realpath(os.path.dirname(__file__))
-#
-#with open(os.path.join(base_dir, 'parameters-b2.yml')) as param:
-#    param = yaml.safe_load(param)
-#d
-parser = argparse.ArgumentParser()
-parser.add_argument('yaml_path')
-args = parser.parse_args()
+base_dir = os.path.realpath(os.path.dirname(__file__))
 
-with open(args.yaml_path) as param:
-    param = yaml.safe_load(param)
+with open(os.path.join(base_dir, 'parameters-b2.yml')) as param:
+   param = yaml.safe_load(param)
+#d
+# parser = argparse.ArgumentParser()
+# parser.add_argument('yaml_path')
+# args = parser.parse_args()
+#
+# with open(args.yaml_path) as param:
+#     param = yaml.safe_load(param)
 
 ########################################
 ### Run the process
